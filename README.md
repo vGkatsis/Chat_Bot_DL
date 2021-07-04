@@ -12,17 +12,24 @@ The goal of this project is to create a chat-bot able to answer python related q
 
 ## Table of Contents
 
-1. [Pre-Processing](#pre-processing)
-2. [Data Preparation](#datapreparation)
-3. [Models](#models)
-4. [Training](#training)
-5. [Evaluation](#evaluation)
-6. [Results](#results)
-7. [References](#references)
+1. [Execution](#execution)
+2. [Pre-Processing](#pre-processing)
+3. [Data Preparation](#datapreparation)
+4. [Models](#models)
+5. [Training](#training)
+6. [Evaluation](#evaluation)
+7. [Results](#results)
+8. [References](#references)
 
+## <a name="execution"></a> 1. Execution
 
+For this project we used the pytorch framework of python. The project code is  located in the Python-Chatbot.ipynb  jupyter notebook. It was executed in Google Colab environment, using a GPU. 
 
-## <a name="pre-processing"></a> 1. Pre-Processing
+Anyone who wants to run the code can do it from the beginning or if a pre-trained model is available they can jump directly to the part where the model is loaded. Comments inside the notebook explain which parts can be skipped.
+
+Since data files are very large (approximately 800Mb each) we are not going to upload them on this repository. Instead we provide the download link in the References section and we suggest that they should be uploaded to a goole drive account. Then the google account can be easily connected with the colab platform in order for the files to be loaded. Code for this purpose already exists in the jupyter notebook. 
+
+## <a name="pre-processing"></a> 2. Pre-Processing
 
 Data preprocessing is done in two phases.
 
@@ -39,7 +46,7 @@ That last step is needed in order to simplify the task, as feeding code blocks t
   - Filter sentences with length greater than a given value.
   - Filter pairs containing containing rare words (words with an appearance frequency lower than a given value).
 
-## <a name="datapreparation"></a> 2. Data Preparation
+## <a name="datapreparation"></a> 3. Data Preparation
 
 Now it is time to prepare our data to be fed in to the model. For this reason the following steps are followed:
 
@@ -52,7 +59,7 @@ Now it is time to prepare our data to be fed in to the model. For this reason th
 
  
 
-## <a name="models"></a> 3. Models
+## <a name="models"></a> 4. Models
 
 We use a sequence two sequence (seq2seq) model composed from 2 Recursive Neural Networks (RNNs) one acting as an encoder and the other acting as a decoder.
 
@@ -91,7 +98,7 @@ So the flow of our seq2seq model is:
 6. Predict next word. 
 7. Return output and final hidden state.
 
-## <a name="training"></a> 4. Training
+## <a name="training"></a> 5. Training
 
 The training procedure consists of the following steps:
 
@@ -118,7 +125,7 @@ During the training process we use a these tricks to aid in convergence:
 - **Teacher forcing:** At some probability, set by **teacher_forcing_ratio**, we use the current target word as the decoder’s next input rather than using the decoder’s current guess. 
 - **Gradient clipping**. Commonly technique for countering the “exploding gradient” problem. In essence, by clipping or thresholding gradients to a maximum value, we prevent the gradients from growing exponentially and either overflow (NaN), or overshoot steep cliffs in the cost function.
 
-## <a name="evaluation"></a> 5. Evaluation
+## <a name="evaluation"></a> 6. Evaluation
 
 Evaluation Decoding Flow:
 
@@ -156,7 +163,7 @@ Evaluation Process
 
 
 
-## <a name="results"></a> 5. Results
+## <a name="results"></a> 7. Results
 
 Experiment results confirm the this is a complicated task and that further work may still to be done. Bellow are some good and some bad examples from different training and executions of the program:
 
@@ -172,7 +179,7 @@ Experiment results confirm the this is a complicated task and that further work 
 
   <img src="./images/bad_res3.png" alt="alt text" width="400" height="100" />
 
-## <a name="references"></a> 5. References
+## <a name="references"></a> 8. References
 
 1. ChatbotTutorial by Matthew Inkawhich  
    https://pytorch.org/tutorials/beginner/chatbot_tutorial.html​
@@ -188,3 +195,4 @@ Experiment results confirm the this is a complicated task and that further work 
    https://arxiv.org/abs/1409.0473​
 7. Python Questions from Stack Overflow 
    https://www.kaggle.com/stackoverflow/pythonquestions​
+
