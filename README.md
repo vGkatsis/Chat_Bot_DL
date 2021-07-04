@@ -162,15 +162,15 @@ Experiment results confirm the this is a complicated task and that further work 
 
 - Good results
 
-  <img src="./results/good1" alt="alt text" width="300" height="300" />
+  <img src="./images/good_res1.png" alt="alt text" width="400" height="100" />
 
-  <img src="./results/good2" alt="alt text" width="300" height="300" />
+  <img src="./images/good_res2.png" alt="alt text" width="400" height="100" />
 
 - Bad results
 
-  <img src="./results/bad1" alt="alt text" width="300" height="300" />
+  <img src="./images/bad_res1.png" alt="alt text" width="300" height="100" />
 
-  <img src="./results/bad2" alt="alt text" width="300" height="300" />
+  <img src="./images/bad_res3.png" alt="alt text" width="400" height="100" />
 
 ## <a name="references"></a> 5. References
 
