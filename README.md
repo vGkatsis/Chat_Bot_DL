@@ -44,7 +44,7 @@ That last step is needed in order to simplify the task, as feeding code blocks t
   - Remove punctuation and special characters.
   - Remove HTML and Markdown tags.
   - Filter sentences with length greater than a given value.
-  - Filter pairs containing containing rare words (words with an appearance frequency lower than a given value).
+  - Filter pairs containing  rare words (words with an appearance frequency lower than a given value).
 
 ## <a name="datapreparation"></a> 3. Data Preparation
 
